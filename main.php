@@ -5,6 +5,7 @@ Plugin URI: http://steponwebstudio.com/
 Description: Wordpress registration using paypal Plugin
 Version: 1.1
 Author: Prakash
+Author URI: http://steponwebstudio.com/
 License: GPL
 */
 
