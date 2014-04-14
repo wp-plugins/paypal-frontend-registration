@@ -41,5 +41,8 @@ This Plugin also provide the test mode by activating "SANDBOX" from admin area.
 **Feb. 11, 2014 - v1.0.0**
 * Realize Plugin
 
+== Upgrade Notice ==
+
 = 1.1.1 =
 * Validation upgraded.
+* Confirm Password field Added for more security.
