@@ -37,6 +37,9 @@ This Plugin also provide the test mode by activating "SANDBOX" from admin area.
 
 
 == Changelog ==
-= 1.0.0= 
+= 1.0.0 = 
 **Feb. 11, 2014 - v1.0.0**
 * Realize Plugin
+
+= 1.1.1 =
+* Validation upgraded.
