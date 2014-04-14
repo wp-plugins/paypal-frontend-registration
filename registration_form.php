@@ -289,6 +289,119 @@ if($_GET['return']=='true') // user successfully pay registratin charges.
  }
  
  ?>
+ <script type="text/javascript">
+
+function form_validate()
+{
+	var e = 0;
+	if(isEmpty("user_login", "Please Enter First Name", "err_user_login"))
+	{
+		e++
+	}
+	if(isEmpty("first_name", "Please Enter Last Name", "err_first_name"))
+	{
+		e++
+	}
+	if(isEmpty("last_name", "Please Enter Landline Number", "err_last_name"))
+	{
+		e++
+	}
+	if(emailcheck("payer_email", "Please Enter Correct Email Id", "err_payer_email"))
+	{
+		e++
+	}
+	if(isEmpty("user_pass", "Please Enter Your Password", "err_user_pass"))
+	{
+		e++
+	}
+	if(isEmpty("con_pass", "Please Enter Your Confirm Password", "err_con_pass"))
+	{
+		e++
+	}
+	if(passcheck("user_pass", "Your Password Not Match", "err_pass_match"))
+	{
+		e++
+	}
+
+
+return false;
+
+		if(e > 0)
+		{
+			//alert("Please fill login details");
+			return false
+		}
+		else
+		{
+				return true
+		}
+
+}
+function emailcheck(e, t, n)
+{
+	var reg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var r = document.getElementById(e);
+	var n = document.getElementById(n);
+	
+	if(reg.test(r.value) == false)
+	{
+		n.innerHTML = t;
+		return true
+	
+	}
+	else
+	{	
+		n.innerHTML = "";
+		r.focus();
+		return false
+		
+	}
+	
+}
+function passcheck(e, t, n)
+{
+	var pass = document.getElementById(e).value;
+	var co_pass = document.getElementById('con_pass').value;
+	var n = document.getElementById(n);
+	
+	
+	if(pass!='' && co_pass!='')
+	{
+		if(pass==co_pass)
+		{
+			n.innerHTML = "";
+			r.focus();
+			return false;	
+		}
+		else
+		{	
+			n.innerHTML = t;		
+			return true;		
+		}
+	}
+	
+	
+}
+function isEmpty(e, t, n)
+{
+		var r = document.getElementById(e);
+		var n = document.getElementById(n);
+		if(r.value.replace(/\s+$/, "") == "")
+		{
+			n.innerHTML = t;
+			r.value = "";
+			r.focus();
+			return true
+		}
+		else
+		{
+			n.innerHTML = "";
+			return false
+		}
+}
+
+    
+</script>
 <script type="text/javascript">
 
 function nospaces(t)
@@ -301,53 +414,15 @@ function nospaces(t)
 }
 
 </script>
- <script type="text/javascript">
- function test()
-{
-	
-	
-	var user_login = document.getElementById("user_login").value;
-	var first_name = document.getElementById("first_name").value;
-	var last_name = document.getElementById("last_name").value;
-	var payer_email = document.getElementById("payer_email").value;
-	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-	var user_pass = document.getElementById("user_pass").value;
-	
-	
-	if(user_login == '')
-	{
-		alert("Please Enter Username");	
-		return false;
-	}
-	else if(first_name == '')
-	{
-		 alert("Please Enter Firstname");	
-		 return false;
-	}
-	else if(last_name == '')
-	{
-		 alert("Please Enter Lastname");	
-		 return false;
-	}
-	else if(payer_email == '')
-	{
-		 alert("Please Enter Email Address");	
-		 return false;
-	}
-	else if(reg.test(payer_email) == false)
-	{
-		alert("Please Enter Valid Email");
-		return false;	
-	}
-	else if(user_pass == '')
-	{
-		 alert("Please Enter Password");	
-		 return false;
-	}
-	return true;
+<style>
+.regi_form em { color:#F00; font-size:15px;}
+.regi_form label {
+  color: #FF0000;
+  margin-left: 7px;
 }
- </script>
-  <form action="" method="post" >
+</style>
+ 
+  <form class="regi_form" action="" method="post" >
     <table width="100%" cellspacing="0" cellpadding="0" class="regtable">
       <tbody>
       <input type="hidden" name="cmd" value="_xclick" />
@@ -357,28 +432,33 @@ function nospaces(t)
       <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
     
       <tr>
-        <td>Username:</td>
-        <td><input type="text" onkeyup="nospaces(this)" value="" id="user_login" name="user_login" /><p id="usernameerror" style="color:red;  display:none;">Please enter Username.</p></td>
+        <td>Username<em>&nbsp;*</em>:</td>
+        <td><input type="text" onkeyup="nospaces(this)" value="" id="user_login" name="user_login" /><label id="err_user_login" ></label></td>
       </tr>
       <tr>
-        <td>First Name:</td>
-        <td><input type="text" onkeyup="nospaces(this)" value="" id="first_name" name="first_name" /></td>
+        <td>First Name<em>&nbsp;*</em>:</td>
+        <td><input type="text" onkeyup="nospaces(this)" value="" id="first_name" name="first_name" /><label id="err_first_name" ></label></td>
       </tr>
       <tr>
-        <td>Last Name:</td>
-        <td><input type="text" id="last_name" value="" name="last_name"></td>
+        <td>Last Name<em>&nbsp;*</em>:</td>
+        <td><input type="text" id="last_name" value="" name="last_name"><label id="err_last_name" ></label></td>
       </tr>
       <tr>
-        <td>Email:</td>
-        <td><input type="text" value="" id="payer_email" name="payer_email"></td>
+        <td>Email<em>&nbsp;*</em>:</td>
+        <td><input type="text" value="" id="payer_email" name="payer_email"><label id="err_payer_email" ></label></td>
       </tr>
       <tr>
-        <td>Password:</td>
-        <td><input type="password" value="" name="user_pass" id="user_pass"></td>
+        <td>Password<em>&nbsp;*</em>:</td>
+        <td><input type="password" value="" name="user_pass" id="user_pass"><label id="err_user_pass" ></label></td>
+      </tr>
+      <tr>
+        <td>Confirm Password<em>&nbsp;*</em>:</td>
+        <td><input type="password" value="" name="con_pass" id="con_pass"><label id="err_con_pass" ></label>
+        <label id="err_pass_match" ></label></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><input type="submit" value="Submit" name="submit"  onclick="return test();" /></td>
+        <td><input type="submit" value="Submit" name="submit"  onclick="return form_validate();" /></td>
       </tr>
       </tbody>
       
