@@ -3,7 +3,7 @@
 Plugin Name: Paypal Registration
 Plugin URI: http://steponwebstudio.com/
 Description: Wordpress registration using paypal Plugin
-Version: 1.0
+Version: 1.1
 Author: Prakash
 License: GPL
 */
