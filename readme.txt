@@ -25,8 +25,8 @@ This Plugin also provide the test mode by activating "SANDBOX" from admin area.
 
 == Screenshots ==
 
-1. Admin Penal - Paypal Details
-2. Front end registration Form 
+1. Front end registration Form
+2. Admin Penal - Paypal Details 
 
 == Frequently Asked Questions ==
 
