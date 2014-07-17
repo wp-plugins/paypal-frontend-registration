@@ -5,7 +5,7 @@ if(isset($_POST['submit']))
 	 $email = $_POST['email'];	
 	
 	$wpdb->update( 
-	'wp_pro_registration_detail', 
+	PRO_TABLE_PREFIX.'registration_detail', 
 			array( 
 				'value' => $charge
 			), 
@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 			);
 	
 	$wpdb->update( 
-	'wp_pro_registration_detail', 
+	PRO_TABLE_PREFIX.'registration_detail', 
 			array( 
 				'value' => $sandbox
 			), 
@@ -29,7 +29,7 @@ if(isset($_POST['submit']))
 			);
 
 	$wpdb->update( 
-	'wp_pro_registration_detail', 
+	PRO_TABLE_PREFIX.'registration_detail', 
 			array( 
 				'value' => $email
 			), 
@@ -111,7 +111,7 @@ function isNumber(evt)
   
   <!-- wpbody-content -->
   <div class="clear"></div>
-  <?php $myrows = $wpdb->get_col("SELECT value FROM wp_pro_registration_detail " ); ?>
+  <?php $myrows = $wpdb->get_col("SELECT value FROM ".PRO_TABLE_PREFIX."registration_detail" ); ?>
   <div  class="postbox">
   <form action="" method="post" >
     <table id="misc-publishing-actions " class="misc-pub-section" cellpadding="0" cellspacing="0">
