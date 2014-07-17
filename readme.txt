@@ -20,7 +20,7 @@ This Plugin also provide the test mode by activating "SANDBOX" from admin area.
 
 1. Upload `Paypal_Frontend_Registration.1.0.0.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Place `[registartion_form]` in your templates
+3. Place `[registartion_form]` in your Pages.
 
 
 == Screenshots ==
