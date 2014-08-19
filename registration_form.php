@@ -294,15 +294,15 @@ if($_GET['return']=='true') // user successfully pay registratin charges.
 function form_validate()
 {
 	var e = 0;
-	if(isEmpty("user_login", "Please Enter First Name", "err_user_login"))
+	if(isEmpty("user_login", "Please Enter User Name", "err_user_login"))
 	{
 		e++
 	}
-	if(isEmpty("first_name", "Please Enter Last Name", "err_first_name"))
+	if(isEmpty("first_name", "Please Enter First Name", "err_first_name"))
 	{
 		e++
 	}
-	if(isEmpty("last_name", "Please Enter Landline Number", "err_last_name"))
+	if(isEmpty("last_name", "Please Enter Last Number", "err_last_name"))
 	{
 		e++
 	}
